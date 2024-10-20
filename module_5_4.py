@@ -8,6 +8,8 @@ class House:
         args = args[0]
         cls.houses_history.append(args)
         return historis
+    def __del__(self):
+        print (f'{self.name} снесён, но  останется в истории')
 
 
     def __init__(self, name, number_of_floors):
@@ -67,4 +69,9 @@ print(House.houses_history)
 h2 = House('ЖК Акация', 20)
 print(House.houses_history)
 h3 = House('ЖК Матрёшки', 20)
+print(House.houses_history)
+
+del h2
+del h3
+
 print(House.houses_history)
